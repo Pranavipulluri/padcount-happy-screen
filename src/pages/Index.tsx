@@ -90,9 +90,17 @@ const Index = () => {
             </div>
 
             <div className="space-y-6 pt-4">
-              <div className="bg-purple-50/50 p-4 rounded-lg flex justify-between items-center">
-                <span className="text-purple-600">Pads Available:</span>
-                <span className="font-semibold text-purple-900 text-lg">{padCount}</span>
+              <div className={`p-4 rounded-lg flex justify-between items-center transition-colors duration-300 ${
+                padCount < 10 ? 'bg-red-50' : 'bg-purple-50/50'
+              }`}>
+                <span className={`${padCount < 10 ? 'text-red-600' : 'text-purple-600'}`}>
+                  Pads Available:
+                </span>
+                <span className={`font-semibold text-lg ${
+                  padCount < 10 ? 'text-red-700' : 'text-purple-900'
+                }`}>
+                  {padCount}
+                </span>
               </div>
 
               <div className="space-y-4">
